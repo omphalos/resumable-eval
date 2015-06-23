@@ -1,0 +1,24 @@
+{
+  "name": "resumable-eval",
+  "version": "0.0.1",
+  "description": "Eval that you can pause and resume",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omphalos/resumable-eval"
+  },
+  "keywords": [
+    "eval",
+    "scope",
+    "debugger"
+  ],
+  "author": "omphalos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omphalos/resumable-eval/issues"
+  },
+  "homepage": "https://github.com/omphalos/resumable-eval"
+}

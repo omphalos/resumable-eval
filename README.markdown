@@ -39,7 +39,7 @@ Note that trying to do this in the naive way fails:
     naiveEval('var y = 3')
     naiveEval('x + y') // This fails because y is undefined
 
-This is why we need *resumable-eval*.
+This is why we need *resumable-eval* :)
 
 Why this can be useful
 ======================
@@ -78,9 +78,11 @@ Tests
 
 To run the tests, clone the repo and install nodeunit:
 
+    git clone https://github.com/omphalos/resumable-eval
+    cd resumable-eval
     npm install -g nodeunit
 
-Then,
+Then:
 
     npm test
 

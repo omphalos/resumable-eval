@@ -48,6 +48,11 @@ Most languages have REPLs, which give you resumable eval in the global scope.
 What if you could have a REPL in function scope, without a breakpoint?
 *resumable-eval* is a utility that gives you that ability.
 
+Installation
+============
+
+    npm install resumable-eval
+
 Lazy sessions
 =============
 

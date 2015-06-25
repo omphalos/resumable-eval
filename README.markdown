@@ -1,11 +1,11 @@
 resumable-eval
 ==============
 
-Resumable eval is a microlibrary (<20 LOC) for pausing and resuming eval.
+Resumable eval is a microlibrary (<30 LOC) for pausing and resuming eval.
 This lets you properly capture of scope of functions in code
 and interact with those scopes on an as-needed basis.
 
-For example,
+For example:
 
     var resumable = require('resumable-eval')
 
@@ -13,13 +13,15 @@ For example,
 
     ;(function() {
       var x = 1
-      session = eval(resumable)
+      session = eval(resumable) // Save the function scope
     })()
 
+    // Interact with the saved scope
     session
       .eval('x')
       .result // returns 1
 
+    // We can alter the scope too
     session
       .eval('var y = 3')
       .eval('x + y')
@@ -31,13 +33,18 @@ Note that trying to do this in the naive way fails:
 
     ;(function() {
       var x = 1
+      // This might look like it works
       naiveEval = function(code) { return eval(code) }
     })()
 
-    naiveEval('x') // This returns 1 but ...
+    // This does return 1, but ...
+    naiveEval('x')
 
+    // We can't save the scope and add variables this way.
     naiveEval('var y = 3')
-    naiveEval('x + y') // This fails because y is undefined
+
+    // This fails because y is undefined
+    naiveEval('x + y')
 
 This is why we need *resumable-eval* :)
 
